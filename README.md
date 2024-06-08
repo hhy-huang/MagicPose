@@ -1,6 +1,5 @@
-# MagicPose
+# 🪄MagicPose
 
-🌟in development..🌟
 
 # Timeline
 |Date|Content|Note Link|
