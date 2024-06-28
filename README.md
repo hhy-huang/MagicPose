@@ -5,6 +5,7 @@
 |Date|Content|Note Link|
 ------|-----|-----
 |2024.6.8| Create repository. | - |
+|2024.6.28| Init Wechat App code framework. | - |
 
 
 # WeChat APP
