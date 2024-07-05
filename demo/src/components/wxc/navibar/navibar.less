@@ -1,0 +1,106 @@
+@import '../../../common/style/hairline.less';
+
+.ui-navigation-bar {
+  @height: 44px;
+  @right: 95px;
+
+  overflow: hidden;
+  color: @text-color;
+  z-index: 990;
+  position: sticky;
+
+  .android {
+    @height: 48px;
+    @right: 111px;
+  }
+
+  &-inner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: @height;
+    display: flex;
+    align-items: center;
+    padding-right: @right;
+    width: calc(100% - @right);
+
+    &::after {
+      .hairline-bottom(@border-color)
+    }
+  }
+
+  .borderless::after {
+    display: none;
+  }
+
+  &-left {
+    position: relative;
+    width: @right;
+    padding-left: 16px;
+    box-sizing: border-box;
+    display:flex;
+    align-items:center;
+
+    .back-container {
+      position: relative;
+      left: -5px;
+      border-radius: @border-radius-max;
+      box-sizing: border-box;
+      display:flex;
+      justify-content: center;
+      align-items:center;
+      width: auto;
+
+      &::after {
+        .hairline();
+        border-radius: @border-radius-max;
+        border: @border-width-base solid @border-color !important;
+      }
+
+      .icon {
+        flex: 1;
+      }
+
+      .vertical-divider {
+        width: 0.5px;
+        height: 18px;
+        background-color: #eaeaea;
+      }
+    }
+  }
+
+  &-btn {
+    position: relative;
+    left: -6px;
+  }
+
+  &-center {
+    font-size: 17px;
+    text-align: center;
+    position: relative;
+    flex: 1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  &-loading {
+    margin-right: 4px;
+    font-size:0;
+
+    .ui-loading{
+      margin-left:0;
+    }
+  }
+
+  &-placeholder {
+    height: @height;
+    background: #F8F8F8;
+    position: relative;
+    z-index: 50;
+  }
+
+  .hover {
+    opacity:.5;
+  }
+}

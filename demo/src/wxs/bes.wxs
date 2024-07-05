@@ -1,0 +1,23 @@
+var object = require('./object.wxs');
+
+var REGEXP = getRegExp('([A-Z])', 'g');
+
+function toLineCase(value) {
+  return value.replace(REGEXP, "-$1").toLowerCase();
+}
+
+function bes(conf) {
+  if (typeof conf === 'object') {
+    var mods = [];
+    object.keys(conf).map(function(key) {
+      if (conf[key]) {
+        mods.push(toLineCase(key) + ': ' + conf[key]);
+      }
+    });
+    return mods.join('; ') + ';';
+  } else {
+    return conf;
+  }
+}
+
+module.exports.bes = bes;

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://gitee.com/gzecy/min/raw/master/schema/component.json",
+  "component": true,
+  "usingComponents": {
+
+  },
+  "componentGenerics": {
+		"item": true
+	}
+}

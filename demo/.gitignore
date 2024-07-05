@@ -1,0 +1,15 @@
+.idea
+.DS_Store
+coverage
+
+# dependencies
+node_modules
+
+package-lock.json
+
+# production
+dist
+docs/doc
+tests/demo.ts
+tests/tempCodeRunnerFile.ts
+tests/demo.ts

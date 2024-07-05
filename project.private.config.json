@@ -1,6 +1,7 @@
 {
   "projectname": "MagicPose",
   "setting": {
-    "compileHotReLoad": true
+    "compileHotReLoad": true,
+    "urlCheck": false
   }
 }

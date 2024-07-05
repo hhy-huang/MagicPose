@@ -1,0 +1,13 @@
+/*****************************************************************************
+文件名: ${fileName}
+作者: ${user}
+日期: ${date}
+描述: ${fileName} 服务的stroe
+******************************************************************************/
+#IMPORT_INFO#
+export class ${ModuleName}Store extends BaseStore {
+  // @observable info: string = 'hello';
+  
+}
+
+export const ${fileName}Store = new ${ModuleName}Store()

@@ -1,0 +1,21 @@
+<view class="ui-tabs custom-class">
+  <view class="ui-tabs-bar-wrp" style="border-bottom: 1px solid {{underLineColor}};">
+    <scroll-view scroll-x scroll-into-view="item_{{currentView}}">
+      <view class="ui-tabs-bar-content content-class">
+        <block wx:for="{{items}}" wx:key="title">
+          <view id="item_{{index}}" class="ui-tabs-bar-item" style="background-color: {{tabBackgroundColor}}; color: {{activeTab === index ? tabActiveTextColor : tabInactiveTextColor}};" bindtap="onTabClick" data-index="{{index}}">
+            <view class="ui-tabs-bar-title tab-class {{activeTab === index ? 'active-tab-class' : ''}}" style="border-bottom-color: {{activeTab === index ? tabUnderlineColor : 'transparent'}}">
+              <text class="">{{item.title}}</text>
+            </view>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+
+  <swiper class="ui-tabs-swiper swiper-class" current="{{activeTab}}" duration="{{duration}}" bindchange="onSwiperChange">
+    <swiper-item wx:for="{{items}}" wx:key="title">
+      <slot name="tab-content-{{index}}"></slot>
+    </swiper-item>
+  </swiper>
+</view>

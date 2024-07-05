@@ -1,0 +1,18 @@
+/* eslint-disable */
+var bem = require('./bem.wxs').bem;
+var bes = require('./bes.wxs').bes;
+var memoize = require('./memoize.wxs').memoize;
+var addUnit = require('./add-unit.wxs').addUnit;
+
+function toInteger(val) {
+  var n = parseInt(val + '', 10);
+  return isNaN(n) ? 0 : n;
+}
+
+module.exports = {
+  bem: memoize(bem),
+  bes: memoize(bes),
+  memoize: memoize,
+  addUnit: addUnit,
+  toInteger: toInteger
+};

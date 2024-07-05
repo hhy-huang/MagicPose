@@ -1,0 +1,4 @@
+
+<view class="custom-class wxc-tag-group">
+  <slot></slot>
+</view>

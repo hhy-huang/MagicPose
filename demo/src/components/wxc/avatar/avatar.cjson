@@ -1,0 +1,9 @@
+{
+  "$schema": "https://gitee.com/gzecy/min/raw/master/schema/component.json",
+  "component": true,
+  "usingComponents": {
+    "wxc-cc": "../cc/cc",
+    "wxc-badge": "../badge/badge",
+    "wxc-image": "../image/image"
+  }
+}

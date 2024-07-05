@@ -1,0 +1,125 @@
+@import '../../../common/style/hairline.less';
+
+:host {
+  display: block;
+}
+
+.wxc-cell {
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  padding: @cell-vertical-padding @cell-horizontal-padding;
+  font-size: @cell-font-size;
+  line-height: @cell-line-height;
+  color: @cell-text-color;
+  background-color: @cell-background-color;
+
+  &::after {
+    .hairline-bottom(@border-color, @padding-md, @padding-md);
+  }
+
+  &--borderless::after {
+    display: none;
+  }
+
+  &-group {
+    background-color: @cell-background-color;
+  }
+
+  &__label {
+    margin-top: @cell-label-margin-top;
+    font-size: @cell-label-font-size;
+    line-height: @cell-label-line-height;
+    color: @cell-label-color;
+  }
+
+  &__value {
+    overflow: hidden;
+    // text-align: right;
+    vertical-align: middle;
+    color: @cell-value-color;
+  }
+
+  &__placeholder {
+    color: @cell-placeholder-color;
+  }
+
+  &__value--right {
+    text-align: right;
+  }
+
+  &__title,
+  &__value {
+    flex: 1;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &__left-icon-wrap,
+  &__right-icon-wrap {
+    display: flex;
+    align-items: center;
+    height: @cell-line-height;
+    font-size: @cell-icon-size;
+  }
+
+  &__left-icon-wrap {
+    margin-right: 10px;
+  }
+
+  &__right-icon-wrap {
+    margin-left: 5px;
+    color: @cell-right-icon-color;
+  }
+
+  &__left-icon {
+    vertical-align: middle;
+    line-height: @cell-line-height;
+    color: @color-primary;
+  }
+
+  &__right-icon {
+    line-height: @cell-line-height;
+    color: @text-color-tips;
+  }
+
+  &--clickable&--hover {
+    background-color: @cell-active-color;
+  }
+
+  &--required {
+    overflow: visible;
+
+    &::before {
+      position: absolute;
+      content: '*';
+      left: @padding-xs;
+      font-size: @cell-font-size;
+      color: @cell-required-color;
+    }
+  }
+
+  &--center {
+    align-items: center;
+  }
+
+  &--large {
+    padding-top: @cell-large-vertical-padding;
+    padding-bottom: @cell-large-vertical-padding;
+
+    .wxc-cell__title {
+      font-size: @cell-large-title-font-size;
+    }
+
+    .wxc-cell__value {
+      font-size: @cell-large-value-font-size;
+    }
+
+    .wxc-cell__label {
+      font-size: @cell-large-label-font-size;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+<view wx:if="{{show}}" class="wxc-dialog-container" catch:touchmove="none">
+  <view class="custom-class wxc-dialog-popup" style="background:{{bgcolor}};" catch:tap="none">
+    <view wx:if="{{title}}" class="title-class wxc-title">{{title}}</view>
+    <view class="content-class wxc-content">
+      <slot/>
+    </view>
+  </view>
+  <view class="wxc-popup-mask" catch:tap="onClose"/>
+</view>

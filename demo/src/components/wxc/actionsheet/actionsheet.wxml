@@ -1,0 +1,14 @@
+<wxs src="../../../wxs/utils.wxs" module="utils"/>
+
+<view wx:if="{{show}}" class="custom-class wxc-actionsheet {{visible?'wxc-actionsheet-show':''}}">
+  <view class="wxc-tips" style="font-size:{{utils.addUnit(size)}};color:{{color}};" wx:if="{{tips}}">
+    {{tips}}
+  </view>
+  <view class="{{isCancel?'wxc-operate-box':''}}">
+    <block wx:for="{{itemList}}" wx:key="text">
+      <view class="wxc-actionsheet-btn {{(!tips &&index==0)?'wxc-round':'wxc-actionsheet-divider'}} {{(!isCancel && index==itemList.length-1)?'wxc-btn-last':''}}" hover-class="wxc-actionsheet-hover" hover-stay-time="150" data-index="{{index}}" style="color:{{item.color || '#1a1a1a'}}" bindtap="handleClickItem">{{item.text}}</view>
+    </block>
+  </view>
+  <view class="wxc-actionsheet-btn wxc-actionsheet-cancel" hover-class="wxc-actionsheet-hover" hover-stay-time="150" wx:if="{{isCancel}}" bindtap="handleClickCancel">取消</view>
+</view>
+<view class="wxc-actionsheet-mask {{visible?'wxc-mask-show':''}}" bindtap="handleClickMask"></view>

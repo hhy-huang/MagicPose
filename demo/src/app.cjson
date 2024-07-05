@@ -1,0 +1,38 @@
+{
+  "$schema": "https://gitee.com/gzecy/min/raw/master/schema/app.json",
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "default",
+    "enablePullDownRefresh": false,
+    "onReachBottomDistance": 0
+  },
+  "usingComponents": {
+    "wxc-navibar": "/components/wxc/navibar/navibar",
+    "wxc-notify": "/components/wxc/notify/notify"
+  },
+  "sitemapLocation": "sitemap.json",
+  "networkTimeout": {
+    "request": 12500,
+    "connectSocket": 5000
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "plugins": {},
+  "subPackages": [
+    {
+      "name": "user",
+      "root": "subpackages/user",
+      "pages": [
+        "pages/demo/demo"
+      ]
+    }
+  ]
+}

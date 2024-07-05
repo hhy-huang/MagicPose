@@ -1,0 +1,27 @@
+<wxs src="../../../wxs/utils.wxs" module="utils" />
+
+<view class="custom-class {{ utils.bem('cell', [size, { center, required, borderless: !border, clickable: isLink || clickable }]) }}" 
+  hover-class="wxc-cell--hover hover-class" 
+  hover-stay-time="70" 
+  style="{{ customStyle }}" 
+  bind:tap="onClick">
+
+  <wxc-icon wx:if="{{ icon }}" name="{{ icon }}" size="20" class="wxc-cell__left-icon-wrap" custom-class="wxc-cell__left-icon" />
+  <slot wx:else name="icon" />
+  <view style="{{ (titleWidth ? 'max-width:' + utils.addUnit(titleWidth) + ';min-width:' + utils.addUnit(titleWidth) + ';' : '') + titleStyle }}" class="wxc-cell__title title-class">
+    <block wx:if="{{ title }}">{{ title }}</block>
+    <slot wx:else name="title" />
+    <view wx:if="{{ label || useLabelSlot }}" class="wxc-cell__label label-class">
+      <slot wx:if="{{ useLabelSlot }}" name="label" />
+      <block wx:elif="{{ label }}">{{ label }}</block>
+    </view>
+  </view>
+  <view class="{{utils.bem('cell__value', {right: valueAlign === 'right'})}} value-class">
+    <block wx:if="{{ value || value === 0 }}">{{ value }}</block>
+    <text wx:elif="{{placeholder}}" class="wxc-cell__placeholder">{{placeholder}}</text>
+    <slot wx:else/>
+  </view>
+  <wxc-icon wx:if="{{ isLink }}" name="{{ arrowDirection ? 'arrow' + '-' + arrowDirection : 'arrow' }}" color="{{arrowColor}}" class="wxc-cell__right-icon-wrap right-icon-class" custom-class="wxc-cell__right-icon" />
+  <slot wx:else name="right-icon" />
+  <slot name="extra" />
+</view>

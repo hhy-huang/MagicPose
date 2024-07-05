@@ -1,0 +1,4 @@
+
+<wxc-flex main="center" cross="center" class="wxc-cc-class custom-class">
+  <slot></slot>
+</wxc-flex>

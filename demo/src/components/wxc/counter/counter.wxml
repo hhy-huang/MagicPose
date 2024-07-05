@@ -1,0 +1,17 @@
+<wxs module="utils" src="../../../wxs/utils.wxs"/>
+
+<view class="wxc-counter custom-class" style="width: {{utils.addUnit(width)}};">
+  <view class="minus" bind:tap="onMinus">
+    <wxc-icon name="minus-bold" color="{{(disabled || min >= value) ? '#d2d2d2' : color}}" custom-class="icon"/>
+  </view>
+  <input 
+    class="{{utils.bem('counter-input', {disabled})}} input-class" 
+    type="number" 
+    value="{{value}}" 
+    disabled="{{disabledInput || disabled}}" 
+    bind:input="onInput" 
+    bind:blur="onBlur"/>
+  <view class="plus" bind:tap="onPlus">
+    <wxc-icon name="plus-bold" color="{{(disabled || (max && max <= value)) ? '#d2d2d2' : color}}" custom-class="icon"/>
+  </view>
+</view>

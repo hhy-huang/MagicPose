@@ -1,0 +1,50 @@
+{
+  "name": "magicpose",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "gulp build",
+    "dev": "gulp builddev",
+    "watch": "concurrently --kill-others \"gulp watch\"",
+    "clear": "remove-all ./dist",
+    "lint": "eslint 'src/**/*.{ts,js}'",
+    "test": "jest ./tests/* --silent --bail"
+  },
+  "devDependencies": {
+    "@minapp/wxml-parser": "^2.1.5",
+    "@types/gulp": "^4.0.5",
+    "@types/jest": "^23.3.12",
+    "@types/json5": "0.0.30",
+    "@types/long": "^4.0.1",
+    "@types/node": "^10.17.51",
+    "@typescript-eslint/eslint-plugin": "^4.4.1",
+    "@typescript-eslint/parser": "^4.4.1",
+    "chalk": "^4.1.0",
+    "concurrently": "^3.5.0",
+    "eslint": "^7.11.0",
+    "fs-extra": "^9.0.1",
+    "gulp": "^4.0.2",
+    "gulp-cached": "^1.1.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-typescript": "^3.2.1",
+    "gulp-util": "^3.0.8",
+    "gulp-watch": "^5.0.1",
+    "jest": "^23.6.0",
+    "json5": "^2.1.3",
+    "less": "^4.1.0",
+    "miniprogram-api-typings": "^3.2.2",
+    "miniprogram-simulate": "^1.2.7",
+    "mora-scripts": "^1.7.4",
+    "ts-jest": "^23.10.5",
+    "typescript": "4.0.3",
+    "vinyl-sourcemaps-apply": "^0.2.1"
+  },
+  "dependencies": {
+    "@we-app/core": "^1.4.2",
+    "@we-app/wxp": "^1.0.4",
+    "mobx": "^3.6.2",
+    "tslib": "^2.0.3"
+  }
+}

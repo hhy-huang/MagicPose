@@ -1,0 +1,47 @@
+@import "./common/style/common.less";
+
+// common.less 可以自己定义, 方便在component中引入
+
+page {
+  min-height: 100vh;
+  background:#f6f6f6;
+  font-size: 30rpx;
+}
+
+.container {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: flex-start;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  color: #333;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+  display: none;
+}
+
+button[disabled] {
+  color: #999 !important;
+  background: #eee !important;
+}
+
+button::after {
+  border: none;
+}
+
+.blur {
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+}
+
+.aero-glass {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}

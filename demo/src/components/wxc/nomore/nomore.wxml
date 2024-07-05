@@ -1,0 +1,3 @@
+<view class="custom-class wxc-nomore" wx:if="{{show}}">
+  <view style="color: {{color}};" class="'wxc-text">{{isDot?dotText:text}}</view>
+</view>

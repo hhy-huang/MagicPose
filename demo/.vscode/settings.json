@@ -1,0 +1,61 @@
+{
+  "minapp-vscode.selfCloseTags": [
+    "icon",
+    "progress",
+    "checkbox",
+    "input",
+    "radio",
+    "slider",
+    "switch",
+    "audio",
+    "image",
+    "video",
+    "camera",
+    "live-player",
+    "live-pusher",
+    "map",
+    "canvas",
+    "web-view",
+    "open-data",
+    "wxc-icon",
+    "wxc-image",
+    "wxc-notice",
+    "wxc-actionsheet",
+    "wxc-switch",
+    "wxc-price",
+    "wxc-counter",
+    "wxc-input"
+  ],
+  "minapp-vscode.globalStyleFiles": ["src/app.less"],
+  "path-intellisense.mappings": {
+    "@": "${workspaceFolder}/src"
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+  },
+  // 配置文件关联
+  "files.associations": {
+    "*.cjson": "jsonc", // 自动完成
+    "*.wxss": "css",
+    "*.wxs": "javascript"
+  },
+  "files.exclude": {
+    // 以下是项目里面的
+    "**/package-lock.json": true,
+    "**/yarn.lock": true,
+    "**/.dtpl": true,
+    "**/.eslintrc.js": true,
+    "**/.eslintignore": true,
+    "**/.editorconfig": true,
+    "**/.gitignore": true,
+    "**/jest.config.js": true,
+    "**/tsconfig.json": true,
+    "**/docs": true,
+    // "**/scripts": true,
+    // "**/dist": true,
+    "**/gulpfile.js": true,
+    
+    "**/node_modules": true,
+  }
+}

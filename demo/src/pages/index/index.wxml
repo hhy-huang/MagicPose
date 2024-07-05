@@ -1,0 +1,29 @@
+<view class="container">
+  <wxc-navibar title="首页" back="{{false}}"/>
+
+  <view class="main">
+    <view class="userinfo">
+      <wxc-button wx:if="{{!user}}" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" bind:tap="onGetUserInfo"> 获取头像昵称 </wxc-button>
+      <block wx:else>
+        <image bind:tap="onClickAvatarImage" class="userinfo-avatar" src="{{user.avatarUrl}}" background-size="cover"></image>
+        <text class="userinfo-nickname">{{user.nickName}}</text>
+      </block>
+    </view>
+
+    <view style="margin-top: 50px;">
+      Page中Count：{{count}} 
+      <wxc-button size="mini" type="default" bind:click="increase">增加</wxc-button>
+    </view>
+    <view style="margin-top: 10px;">
+      双向绑定：<counter-a number.sync="{{count}}" />
+    </view>
+    <view style="margin-top: 10px;">
+      单向绑定：<counter-b number="{{count}}" />
+    </view>
+
+    双向绑定支持多层
+  </view>
+</view>
+
+
+<wxc-notify id="default-notify"/>

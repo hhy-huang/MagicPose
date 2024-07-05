@@ -1,0 +1,6 @@
+<view class="custom-class grid-image-group" style="grid-template-columns: repeat({{showNum}}, 1fr);">
+  <view class="item-container" wx:for="{{source}}" wx:key="*this">
+    <wxc-image class="image-item" src="{{item.thumb}}" lazy-load="{{lazyLoad}}" data-src="{{item.url}}" bind:click="onImageClick"/>
+    <view wx:if="{{imgs.length > showNum && index === (showNum - 1)}}" class="tag">{{imgs.length-showNum}}图</view>
+  </view>
+</view>

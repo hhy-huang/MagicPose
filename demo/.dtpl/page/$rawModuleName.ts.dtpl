@@ -1,0 +1,47 @@
+/*****************************************************************************
+文件名: ${fileName}
+作者: ${user}
+日期: ${date}
+描述: 
+******************************************************************************/
+#IMPORT_INFO#
+const Logger = LoggerFactory.getLogger("${ModuleName}Page");
+
+@pagify()
+export class ${ModuleName}Page extends BasePage<StoreCenter, ServiceCore> {
+  data = {
+    
+  }
+
+  /**
+   * 引入store数据
+   */
+  states = {
+    /**
+    isLogin: true,    // wxml中 {{store.isLogin}}
+    test: ['count']   // wxml中 {{store.test.count}}
+    */
+  }
+
+  /**
+   * 计算属性装饰器用法
+   * - 函数名就是属性的名字，wxml: {{user}}
+   */
+  @compute
+  user() {
+    return this.$store.user.user;
+  }
+
+  public onLoad(options: IAnyObject) {
+    
+  }
+
+  public onShareAppMessage(options: IShareAppMessageOption): ICustomShareContent {
+    
+    return {}
+  }
+
+  public onTabItemTap(item: IAnyObject) {
+    
+  }
+}

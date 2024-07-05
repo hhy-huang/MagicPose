@@ -1,0 +1,41 @@
+<wxs src="../../../wxs/utils.wxs" module="utils"/>
+<wxs module="computed">
+  /* eslint-disable */
+  var style = require('../../../wxs/style.wxs').style;
+  var addUnit = require('../../../wxs/add-unit.wxs').addUnit;
+
+  function rootStyle(data) {
+    return style({
+      'z-index': data.zIndex,
+      top: addUnit(data.top),
+    });
+  }
+
+  function notifyStyle(data) {
+    return style({
+      background: data.background,
+      color: data.color,
+    });
+  }
+
+  module.exports = {
+    rootStyle: rootStyle,
+    notifyStyle: notifyStyle,
+  };
+</wxs>
+
+<wxc-transition
+  name="slide-down"
+  show="{{ show }}"
+  custom-class="wxc-notify__container"
+  custom-style="{{ computed.rootStyle({ zIndex, top }) }}"
+  bind:tap="onClick"
+>
+  <view
+    class="wxc-notify wxc-notify--{{ type }}"
+    style="{{ computed.notifyStyle({ background, color }) }}"
+  >
+    <view wx:if="{{ safeAreaInsetTop }}" style="height: {{utils.addUnit(statusBarHeight)}}"/>
+    <text>{{ message }}</text>
+  </view>
+</wxc-transition>

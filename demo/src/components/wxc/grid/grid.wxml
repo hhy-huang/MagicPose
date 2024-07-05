@@ -1,0 +1,3 @@
+<view class="wxc-grid custom-class {{ border && !gutter ? 'wxc-hairline--top' : '' }}" style="{{ viewStyle }}">
+  <slot />
+</view>

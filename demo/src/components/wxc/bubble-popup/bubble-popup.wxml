@@ -1,0 +1,12 @@
+<wxs src="../../../wxs/utils.wxs" module="utils" />
+<view class="wxc-popup custom-class">
+  <slot />
+  <view 
+    class="{{utils.bem('popup-content', {show, round})}} wxc-popup-content--{{placement}} wxc-popup-content--{{theme}}" 
+    style="{{offsetStyle}}; z-index: {{utils.toInteger(zIndex)+1}};"
+  >
+    <view class="wxc-popup-arrow wxc-popup-arrow--{{placement}} wxc-popup-arrow--{{theme}}" />
+    <slot name="content" />
+  </view>
+  <view wx:if="{{mask}}" class="{{utils.bem('popup-mask', {show})}}" style="z-index: {{utils.toInteger(zIndex)}};" catch:touchmove="stop" bind:tap="onClose" />
+</view>

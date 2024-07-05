@@ -1,0 +1,4 @@
+<view class="wxc-loadmore-class wxc-loadmore" wx:if="{{show}}">
+  <view class="{{'wxc-loading-'+index}} {{(index==3 && type)?'wxc-loading-'+type:''}}"></view>
+  <view class="wxc-loadmore-tips" style="color: {{color}};">{{text}}</view>
+</view>

@@ -1,0 +1,19 @@
+<view class="wxc-empty custom-class">
+  <view class="wxc-empty__image">
+    <image wx:if="{{ imageUrl }}" class="wxc-empty__image__img" src="{{ imageUrl }}" />
+    <block wx:else>
+      <slot name="image"></slot>
+    </block>
+  </view>
+  
+  <view class="wxc-empty__description">
+    <view wx:if="{{desc}}">{{ desc }}</view>
+    <block wx:else>
+      <slot name="desc"></slot>
+    </block>
+  </view>
+
+  <view class="wxc-empty__bottom">
+    <slot></slot>
+  </view>
+</view>

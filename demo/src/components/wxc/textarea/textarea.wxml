@@ -1,0 +1,44 @@
+<wxs src="../../../wxs/utils.wxs" module="utils"/>
+
+<view class="textarea-container {{border ? 'textarea-border' : ''}} custom-class">
+  <view class="textarea-warp">
+    <textarea 
+      wx:if="{{focus}}"
+      class="textarea textarea-class"
+      value="{{value}}"
+      style="height: {{utils.addUnit(height)}}; {{customStyle}}"
+      placeholder="{{placeholder}}"
+      placeholder-class="placeholder-class"
+      placeholder-style="{{placeholderStyle}}"
+      disabled="{{disabled}}"
+      maxlength="{{maxlength}}"
+      auto-focus="{{autoFocus}}"
+      focus="{{focus}}"
+      autoHeight="{{autoHeight}}"
+      fixed="{{fixed}}"
+      cursor-spacing="{{cursorSpacing}}"
+      cursor="{{cursor}}"
+      showConfirmBar="{{showConfirmBar}}"
+      selection-start="{{selectionStart}}"
+      selection-end="{{selectionEnd}}"
+      adjust-position="{{adjustPosition}}"
+      hold-keyboard="{{holdKeyboard}}"
+      disableDefaultPadding="{{disableDefaultPadding}}"
+      confirm-type="{{confirmType}}"
+      confirm-hold="{{confirmHold}}"
+      bind:focus="onTextAreaFocus"
+      bind:blur="onTextAreaBlur"
+      bind:input="onDetailInput"
+      bindlinechange="onLineChange"
+      bindconfirm="onConfirm"
+      bindkeyboardheightchange="onKeyboardHeightChange"
+    />
+    <view wx:if="{{!focus}}"
+      class="textarea" 
+      style="height: {{utils.addUnit(height)}}; {{value ? '' : placeholderStyle}}" 
+      bind:tap="onTextAreaFocus">
+      <text>{{value || placeholder}}</text>
+    </view>
+  </view>
+  <view wx:if="{{count}}" class="counter">{{value ? value.length : 0}}/{{maxlength}}</view>
+</view>

@@ -1,0 +1,32 @@
+<wxs module="utils" src="../../../wxs/utils.wxs"/>
+
+<view wx:if="{{show}}" class="wxc-picker">
+  <view class="custom-class {{utils.bem('picker-container', {show: visible})}}">
+    <view class="header">
+      <view wx:if="{{title}}" class="title">{{title}}</view>
+    </view>
+      
+    <picker-view 
+      value="{{value}}"
+      class="content"
+      bindpickstart="onBindpickstart"
+      bindchange="onBindChange"
+      bindpickend="onBindpickend"
+      indicator-style="{{indicatorStyle ? indicatorStyle : 'height:47px;'}}"
+      mask-style="{{maskStyle}}"
+    >
+      <picker-view-column wx:for="{{columnsData}}" wx:key="*this">
+        <view wx:for="{{item}}" wx:for-item="itemIn" class="content-item" wx:key="*this">
+          <text class="item-text" style="{{chooseItemTextStyle}}">{{isUseKey ? itemIn[key] : itemIn}}</text>
+        </view>
+      </picker-view-column>
+    </picker-view>
+
+    <view class="footer">
+      <wxc-button custom-class="cancel" height="45" width="125" radius="3" bind:click="onClose">取消</wxc-button>
+      <view style="width: 25px;"/>
+      <wxc-button height="45" width="125" radius="3" type="primary" bind:click="onConfirm">确认</wxc-button>
+    </view>
+  </view>
+  <view class="{{utils.bem('picker-mask', {show: visible})}}" bind:tap="onClose"/>
+</view>

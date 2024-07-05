@@ -1,0 +1,43 @@
+@import "../../../common/style/hairline.less";
+
+.wxc-counter {
+  position: relative;
+  display: inline-flex;
+  color: @text-color;
+  font-size: @font-size-md;
+  border: 0.5px solid @counter-border-color;
+  border-radius: @counter-border-radius;
+
+  .icon {
+    position: relative;
+    top: -1px;
+  }
+
+  .minus {
+    display: flex;
+    padding: @counter-btn-padding;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .wxc-counter-input {
+    position: relative;
+    flex: 1;
+    height: auto;
+    text-align: center;
+
+    border-left: 0.5px solid @counter-border-color;
+    border-right: 0.5px solid @counter-border-color;
+
+    &--disabled {
+      color: @counter-disabled-color;
+    }
+  }
+
+  .plus {
+    display: flex;
+    padding: @counter-btn-padding;
+    align-items: center;
+    justify-content: center;
+  }
+}

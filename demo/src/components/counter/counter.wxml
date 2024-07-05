@@ -1,0 +1,8 @@
+<view class="counter">
+  <text>子组件值：{{number}}</text>
+
+  <view>
+    <wxc-button size="mini" bind:tap="increase">递增</wxc-button>
+    <wxc-button size="mini" style="margin-left: 4px;" bind:tap="decrease">递减</wxc-button>
+  </view>
+</view>

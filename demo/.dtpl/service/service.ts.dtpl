@@ -1,0 +1,33 @@
+/*****************************************************************************
+文件名: ${fileName}
+作者: ${user}
+日期: ${date}
+描述: 
+******************************************************************************/
+#IMPORT_INFO#
+
+const Logger = LoggerFactory.getLogger("${ModuleName}Service");
+
+@serify('${fileName}')
+// @ts-ignore
+class ${ModuleName}Service extends BaseService<StoreCenter, ServiceCore> {
+  /**
+   * 服务对外提供的数据
+   */
+  data = Store.${fileName}
+
+  /**
+   * 服务初始化事件
+   */
+  public onStart() {
+    console.debug('${ModuleName}Service::onStart service onStart')
+    this.onEvent('EVENT_NAME', this.dosomething)
+    this.onOnce('EVENT_NAME', this.dosomething)
+  }
+
+  public dosomething() {
+     
+  }
+}
+
+export const ${fileName} = getService('$fileName') as ${ModuleName}Service

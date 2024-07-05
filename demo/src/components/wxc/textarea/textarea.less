@@ -1,0 +1,35 @@
+@import '../../../common/style/var.less';
+
+.textarea-container {
+  padding: @padding-md 0 0 0;
+  font-size: @font-size-lg;
+  line-height: @line-height-lg;
+  color: @text-color;
+  background-color: @white;
+
+  .textarea-warp {
+    width: 100%;
+    height: auto;
+  }
+
+  .textarea {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .counter {
+    font-size: @font-size-sm;
+    color: @text-color-desc;
+    text-align: right;
+    height: 20px;
+    line-height: 20px;
+    padding-top: 2px;
+  }
+}
+
+.textarea-border {
+  border: 0.5px solid @border-color;
+  border-radius: @border-radius-md;
+  box-sizing: border-box;
+  padding: @padding-sm @padding-sm @padding-base @padding-sm !important;
+}

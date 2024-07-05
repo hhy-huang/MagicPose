@@ -1,0 +1,6 @@
+
+<view class="avatar-group">
+  <block wx:for="{{avatars}}" wx:for-item="avatar" wx:key="*this">
+    <wxc-image class="avatar" round src="{{avatar}}" border-size="{{borderSize}}" border-color="{{borderColor}}" width="{{size}}" height="{{size}}" placeholder="/res/icon_default_ava.png"/>
+  </block>
+</view>

@@ -1,0 +1,30 @@
+<scroll-view class="custom-class scroll-container" 
+  scroll-y 
+  scroll-anchoring
+  enhanced
+  refresher-threshold="{{100}}"
+  lower-threshold="{{100}}"
+  refresher-enabled="{{refresherEnabled}}"
+  refresher-triggered="{{isRefreshing}}" 
+  bind:scroll="{{scroll.onScroll}}"
+  bind:refresherrefresh="onRefresh"
+  bind:scrolltolower="onLoadMore">
+
+  <slot></slot>
+  
+  <wxc-loadmore show="{{isLoading}}" text="{{loadmoreText}}"/>
+  <wxc-nomore show="{{!isEmpty && !isError && isNomore && nomoreEnabled}}" text="{{nomoreText}}"/>
+
+  <wxc-empty wx:if="{{isEmpty || isError}}" image="{{isError ? 'error' : 'default'}}" desc="{{isError ? errorText : emptyText}}">
+    <wxc-button wx:if="{{isError}}" block bind:tap="onRetry" height="40" width="110" round>重试</wxc-button>
+    <slot name="empty"></slot>
+  </wxc-empty>
+</scroll-view>
+
+<wxs module="scroll">
+  module.exports = {
+    onScroll: function(event, instance) {
+      instance.triggerEvent('scroll', event.detail)
+    }
+  }
+</wxs>

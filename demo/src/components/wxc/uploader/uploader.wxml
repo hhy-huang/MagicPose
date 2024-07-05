@@ -1,0 +1,39 @@
+<wxs src="../../../wxs/utils.wxs" module="utils" />
+<view class="wxc-uploader">
+  <view class="wxc-uploader__wrapper">
+    <!-- 预览样式 -->
+    <view wx:if="{{ previewImage }}" wx:for="{{ lists }}" wx:key="index" class="wxc-uploader__preview" data-index="{{ index }}" bindtap="onClickPreview">
+      <image wx:if="{{ item.isImage }}" mode="{{ imageFit }}" src="{{ item.thumb || item.url }}" alt="{{ item.name || ('图片' + index) }}" class="wxc-uploader__preview-image" style="width: {{ utils.addUnit(previewSize) }}; height: {{ utils.addUnit(previewSize) }};" data-index="{{ index }}" bind:tap="onPreviewImage" />
+      <video wx:elif="{{ item.isVideo }}" src="{{ item.url }}" title="{{ item.name || ('视频' + index) }}" poster="{{ item.thumb }}" autoplay="{{ item.autoplay }}" class="wxc-uploader__preview-image" style="width: {{ utils.addUnit(previewSize) }}; height: {{ utils.addUnit(previewSize) }};" data-index="{{ index }}" bind:tap="onPreviewVideo"></video>
+      <view wx:else class="wxc-uploader__file" style="width: {{ utils.addUnit(previewSize) }}; height: {{ utils.addUnit(previewSize) }};">
+        <wxc-icon name="description" class="wxc-uploader__file-icon" />
+        <view class="wxc-uploader__file-name wxc-ellipsis">{{ item.name || item.url }}</view>
+      </view>
+      <view wx:if="{{ item.status === 'uploading' || item.status === 'upload' || item.status === 'failed' }}" class="wxc-uploader__mask">
+        <wxc-icon wx:if="{{ item.status === 'failed' }}" name="close" class="wxc-uploader__mask-icon" />
+        <wxc-loading wx:else custom-class="wxc-uploader__loading" />
+        <text wx:if="{{ item.message }}" class="wxc-uploader__mask-message">{{ item.message }}</text>
+      </view>
+      <view wx:if="{{ deletable && item.deletable }}" data-index="{{ index }}" class="wxc-uploader__preview-delete" catch:tap="deleteItem">
+        <wxc-icon name="cross" class="wxc-uploader__preview-delete-icon" />
+      </view>
+    </view>
+    <!-- 上传样式 -->
+    <block wx:if="{{ isInCount }}">
+      <view class="wxc-uploader__slot" bindtap="startUpload">
+        <slot />
+      </view>
+      <!-- 默认上传样式 -->
+      <view 
+        wx:if="{{ showUpload }}" 
+        class="wxc-uploader__upload {{ disabled ? 'wxc-uploader__upload--disabled': ''}}" 
+        hover-class="hover-color" 
+        style="width: {{ utils.addUnit(previewSize) }}; height: {{ utils.addUnit(previewSize) }};" 
+        bindtap="startUpload"
+      >
+        <wxc-icon name="{{ uploadIcon }}" class="wxc-uploader__upload-icon" />
+        <text wx:if="{{ uploadText }}" class="wxc-uploader__upload-text">{{ uploadText }}</text>
+      </view>
+    </block>
+  </view>
+</view>

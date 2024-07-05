@@ -1,0 +1,70 @@
+/*****************************************************************************
+文件名: ${fileName}
+作者: ${user}
+日期: ${date}
+描述: 
+******************************************************************************/
+#IMPORT_INFO#
+const Logger = LoggerFactory.getLogger("${ModuleName}Component");
+
+@comify()
+export class ${ModuleName}Component extends BaseComponent<StoreCenter, ServiceCore> {
+
+  // 组件属性列表
+  properties = {
+
+  }
+
+  // 组件的初始数据
+  data = {
+
+  }
+
+  /**
+   * 引入store数据
+   */
+  states = {
+    /**
+    isLogin: true,    // wxml中 {{store.isLogin}}
+    test: ['count']   // wxml中 {{store.test.count}}
+    */
+  }
+
+  /**
+  * 引入外部样式类
+  */
+  externalClasses = [
+  
+  ]
+
+  /**
+   * 计算属性装饰器用法
+   * - 函数名就是属性的名字，wxml: {{isLogin}}
+   */
+  @compute
+  isLogin() {
+    return this.$store.isLogin;
+  }
+
+  // 生命周期函数 create
+  public onCreated() {
+
+  }
+
+  // 生命周期函数 ready
+  public onReady() {
+    Logger.info('在 hello 组件中获取 store: %o', this.$store)
+  }
+
+  // 组件属性值有更新时会调用此函数，不需要在 properties 中设置 observer 函数
+  public onPropUpdate(prop: string, newValue: any, oldValue: any) {
+    // 建议使用 @ob 方式
+  }
+
+  /**
+   * 自定义的函数，不需要放在 methods 中
+   */
+  public dosomething() {
+
+  }
+}

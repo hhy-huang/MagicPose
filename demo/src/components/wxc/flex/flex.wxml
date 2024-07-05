@@ -1,0 +1,7 @@
+
+<view 
+  bindtap="onClick" 
+  style="{{autoHeight ? 'height: auto;' : ''}} {{autoWidth ? 'width: auto;' : ''}}"
+  class="flex dir--{{dir}} main--{{main}} cross--{{cross}} wrap--{{wrap}} custom-class">
+  <slot></slot>
+</view>

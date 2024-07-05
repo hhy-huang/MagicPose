@@ -1,0 +1,63 @@
+{
+  "$schema": "https://gitee.com/gzecy/min/raw/master/schema/project.config.json",
+  "description": "a magic for pose",
+  "setting": {
+    "es6": true,
+    "postcss": true,
+    "minified": true,
+    "urlCheck": false,
+    "uglifyFileName": false,
+    "newFeature": true,
+    "coverView": true,
+    "enhance": false,
+    "nodeModules": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "babelSetting": {
+      "ignore": [
+        "common/libs/tim/tim-wx-sdk/*",
+        "common/libs/umtrack-wx/*",
+        "miniprogram_npm/*"
+      ]
+    }
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.12.2",
+  "appid": "wx2938e11527fd6650",
+  "projectname": "magicpose",
+  "isGameTourist": false,
+  "packOptions": {
+    "ignore": []
+  },
+  "scripts": {
+    "beforeCompile": "npm install",
+    "beforePreview": "",
+    "beforeUpload": ""
+  },
+  "condition": {
+    "search": {
+      "current": -1,
+      "list": []
+    },
+    "conversation": {
+      "current": -1,
+      "list": []
+    },
+    "plugin": {
+      "current": -1,
+      "list": []
+    },
+    "game": {
+      "current": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "current": -1,
+      "list": []
+    }
+  }
+}

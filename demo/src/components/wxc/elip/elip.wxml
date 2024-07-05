@@ -1,0 +1,5 @@
+
+<text 
+  class="wxc-elip {{line > 1 ? 'elip--multiple' : ''}} custom-class" 
+  style="{{line > 1 ? '-webkit-line-clamp: ' + line + ';' : ''}}"><block wx:if="{{text}}">{{text}}</block><block wx:else><slot/></block>
+</text>

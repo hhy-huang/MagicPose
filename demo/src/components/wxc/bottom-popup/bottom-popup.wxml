@@ -1,0 +1,42 @@
+<wxs src="../../../wxs/utils.wxs" module="utils"/>
+
+<block wx:if="{{hasPageContainer && enhance}}">
+  <page-container
+    show="{{visible}}"
+    z-index="{{999}}"
+    overlay="{{mask}}"
+    position="bottom"
+    round
+    custom-style="background:{{bgcolor}}; {{height?'height:'+ utils.addUnit(height + (title ? 47 : 0))+';':''}}"
+    bind:clickoverlay="onEnhaceClose"
+    bind:afterleave="onAfterLeave"
+  >
+    <block wx:if="{{show}}">
+      <view wx:if="{{title}}" class="wxc-title-view">
+        <view class="title">{{title}}</view>
+        <block wx:if="{{hasMenuSlot}}">
+          <slot name="menu"></slot>
+        </block>
+        <wxc-icon wx:else name="cross" size="19" color="#bbb" catch:click="onEnhaceClose"/>
+      </view>
+      <view class="wxc-content" style="{{height?'height:'+ utils.addUnit(height)+';':''}}">
+        <slot></slot>
+      </view>
+    </block>
+  </page-container>
+</block>
+<view wx:elif="{{show}}" catchtouchmove="forbid">
+  <view class="custom-class wxc-bottom-popup {{visible?'wxc-popup-show':''}}" style="background:{{bgcolor}};">
+    <view wx:if="{{title}}" class="wxc-title-view">
+      <view class="title">{{title}}</view>
+      <block wx:if="{{hasMenuSlot}}">
+        <slot name="menu"></slot>
+      </block>
+      <wxc-icon wx:else name="cross" size="19" color="#bbb" catch:click="onClose"/>
+    </view>
+    <view class="wxc-content" style="{{height?'height:'+ utils.addUnit(height)+';':''}}">
+      <slot></slot>
+    </view>
+  </view>
+  <view class="wxc-popup-mask {{visible?'wxc-mask-show':''}}" wx:if="{{mask}}" catch:tap="onClose"></view>
+</view>

@@ -1,0 +1,9 @@
+{
+  "$schema": "https://gitee.com/gzecy/min/raw/master/schema/page.json",
+  "usingComponents": {
+    "counter-a": "/components/counter/counter",
+    "counter-b": "/components/counter/counter",
+    "wxc-button": "@/components/wxc/button/button"
+  },
+  "navigationStyle": "custom"
+}

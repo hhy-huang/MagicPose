@@ -1,0 +1,18 @@
+<wxs src="../../../wxs/utils.wxs" module="utils" />
+
+<view class="custom-class wxc-loading {{ vertical ? 'wxc-loading--vertical' : '' }}">
+  <view
+    class="wxc-loading__spinner wxc-loading__spinner--{{ type }}"
+    style="color: {{ color }}; width: {{ utils.addUnit(size) }}; height: {{ utils.addUnit(size) }}"
+  >
+    <view
+      wx:if="{{ type === 'spinner' }}"
+      wx:for="{{ array12 }}"
+      wx:key="index"
+      class="wxc-loading__dot"
+    />
+  </view>
+  <view class="wxc-loading__text" style="font-size: {{ utils.addUnit(textSize) }};">
+    <slot />
+  </view>
+</view>

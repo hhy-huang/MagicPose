@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "target": "es6",
+    "allowJs": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "alwaysStrict": true,
+    "inlineSourceMap": false,
+    "inlineSources": false,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "strict": true,
+    "removeComments": true,
+    "pretty": true,
+    "strictPropertyInitialization": true,
+    // 屏蔽找不到tslib错误
+    "moduleResolution": "node", 
+    "outDir": "./dist",
+    "typeRoots": [
+      "types",
+      "miniprogram-api-typings",
+      // "./node_modules/@types"
+    ],
+    // "types": ["miniprogram-api-typings", "types"],
+    "lib": [
+      "esnext",
+      "dom",
+    ]
+  },
+  "include": [
+    "src/**/*",
+    "tests"
+  ],
+  "exclude": [
+    "node_modules",
+    "miniprogram_dist",
+    "dist",
+    "scripts",
+    "src/**/node_modules",
+    "docs",
+    "config",
+    // "tests"
+  ]
+}

@@ -1,0 +1,6 @@
+<view class="container">
+  <wxc-navibar title="XXXXXX"/>
+
+</view>
+
+<wxc-notify id="default-notify"/>

@@ -1,0 +1,41 @@
+@import "./var.less";
+
+// 隐藏按钮
+.ghost-button {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  right: 0;
+  opacity: 0;
+  z-index: 100;
+}
+
+.blur {
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+}
+
+.blur-light {
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+}
+
+// 产品品牌信息
+.brand-info {
+  margin: 50px auto 25px;
+  line-height: 1.5em;
+  text-align: center;
+  font-size: @font-size-sm;
+  color: @text-color-desc;
+}
+
+// 颜色hover
+.hover-color {
+  background-color: @active-color !important;
+}
+
+// 透明度hover
+.hover-opacity {
+  opacity: @active-opacity !important;
+}

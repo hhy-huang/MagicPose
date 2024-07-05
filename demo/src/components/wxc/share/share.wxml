@@ -1,0 +1,30 @@
+
+<!-- 分享底部弹窗 -->
+<wxc-bottom-popup show.sync="{{show}}">
+  <view class="share-container">
+    <view class="item" bind:tap="onShareToFriends">
+      <wxc-button open-type="share" ghost/>
+      <wxc-image class="icon" src="/res/icon_wechat.png"/>
+      <view class="label">分享到群</view>
+    </view>
+    <view class="item" bind:tap="onSaveSharePicture">
+      <wxc-image class="icon" src="/res/icon_friend.png"/>
+      <view class="label">保存海报</view>
+    </view>
+  </view>
+</wxc-bottom-popup>
+
+<painter 
+  id="painter" 
+  wx:if="{{!show}}"
+  customStyle='position:fixed;top:30000rpx;'
+  palette="{{template}}" 
+  bind:preProcess="onPreProcess" 
+  bind:imgOK="onImgOK" />
+
+<view wx:if="{{isSaveShown}}" catchtouchmove="noop" bind:tap="handleClickMask">
+  <view class="image-popup">
+    <image class="image" mode="widthFix" src="{{img}}" catch:tap="noop"/>
+    <wxc-button class="save-btn" type="primary" height="45" block round size="large" catch:tap="onSaveToAlbum">保存图片</wxc-button>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "$schema": "https://gitee.com/gzecy/min/raw/master/schema/component.json",
+  "component": true,
+  "usingComponents": {
+    "trees": "./trees/trees"
+  }
+}

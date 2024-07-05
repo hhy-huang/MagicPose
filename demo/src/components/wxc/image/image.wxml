@@ -1,0 +1,10 @@
+
+<image
+  src="{{ src }}"
+  mode="{{ mode }}"
+  lazy-load="{{ lazyLoad }}"
+  class="wxc-image {{ round ? 'wxc-image-round' : ''}} custom-class"
+  style="{{ viewStyle }} {{border}} {{isError ? 'background:' + backgroudColor + ';' : ''}} {{customStyle}}"
+  show-menu-by-longpress="{{ showMenuByLongpress }}"
+  bind:tap="onClick"
+  bind:error="onLoadError"/>

@@ -1,0 +1,19 @@
+<wxs module="utils" src="../../../wxs/utils.wxs"/>
+
+<wxc-bubble-popup 
+  custom-class="custom-class" 
+  show="{{show}}" 
+  mask="{{mask}}"
+  round="{{round}}"
+  placement="{{placement}}"
+  theme="{{theme}}"
+  offset="{{offset}}"
+  z-index="{{zIndex}}"
+>
+  <slot />
+  <view class="content" slot="content">
+    <view class="text content-class" style="width: {{utils.addUnit(contentWidth)}}; height: {{utils.addUnit(contentHeight)}};">{{content}}</view>
+    <wxc-icon name="cross" color="#bbb" size="12" bind:click="closeTooltip"/>
+  </view>
+</wxc-bubble-popup>
+

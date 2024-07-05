@@ -1,0 +1,28 @@
+<wxs module="handler" src="./drag.wxs"/>
+
+<view 
+  class="item-wrap custom-class"
+  list="{{list}}"
+  style="{{wrapStyle}}"
+  baseData="{{baseData}}"
+  change:list="{{handler.listObserver}}"
+  change:baseData="{{handler.baseDataObserver}}"
+>
+	<view
+		class="item"
+		wx:for="{{list}}"
+		wx:key="id"
+		data-index="{{index}}"
+		style="width: {{100/columns}}%"
+		bind:longpress="{{handler.longPress}}"
+		catch:touchmove="{{dragging ? handler.touchMove : ''}}"
+		catch:touchend="{{dragging ? handler.touchEnd : ''}}"
+  >
+		<block wx:if="{{item.extraNode}}">
+			<slot name="{{item.slot}}"></slot>
+		</block>
+		<block wx:else>
+			<item data-index="{{index}}" columns="{{columns}}" data="{{list}}" item-data.sync="{{item.data@list[${index}].data}}" bind:click="itemClick"/>
+		</block>
+	</view>
+</view>

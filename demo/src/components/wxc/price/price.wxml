@@ -1,0 +1,13 @@
+
+<view class="wxc-price custom-class" style="{{del ? ('color: ' + delColor) : ''}}">
+  <view wx:if="{{symbol === 'pre' && (value || !zeroValue)}}" class="wxc-price-icon icon--{{icon}} {{del ? 'icon-del': ''}}">￥</view>
+  <view class="wxc-price-count {{del ? 'count-del' : ''}} value-class">
+    <text wx:if="{{!value && zeroValue}}" class="zero-class">{{zeroValue}}</text>
+    <block wx:else>
+      <text>{{price && decimal !== 'small' ? price : ''}}</text>
+      <text wx:if="{{price && decimal === 'small'}}">{{price}}</text>
+      <text wx:if="{{price && decimal === 'small'}}" class="count-decimal--small">.{{decimalNum}}</text>
+      <text wx:if="{{symbol === 'post'}}" class="wxc-price-icon {{icon ? 'icon--'+icon: 'post-symbol'}}">元</text>
+    </block>
+  </view>
+</view>

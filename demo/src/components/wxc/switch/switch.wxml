@@ -1,0 +1,40 @@
+<wxs src="../../../wxs/utils.wxs" module="utils"/>
+<wxs module="computed">
+  /* eslint-disable */
+  var style = require('../../../wxs/style.wxs').style;
+  var addUnit = require('../../../wxs/add-unit.wxs').addUnit;
+
+  function rootStyle(data) {
+    var currentColor = data.checked ? data.activeColor : data.inactiveColor;
+
+    return style({
+      'font-size': addUnit(data.size),
+      'background-color': currentColor,
+    });
+  }
+
+  var BRAND_COLOR = '#F95B5B';
+
+  function loadingColor(data) {
+    return data.activeColor || BRAND_COLOR;
+  }
+
+  module.exports = {
+    rootStyle: rootStyle,
+    loadingColor: loadingColor,
+  };
+</wxs>
+
+<view
+  class="{{ utils.bem('switch', { on: checked === activeValue, disabled }) }} custom-class"
+  style="{{ computed.rootStyle({ size, checked, activeColor, inactiveColor }) }}"
+  bind:tap="onClick"
+>
+  <view class="wxc-switch__node node-class">
+    <wxc-loading
+      wx:if="{{ loading }}"
+      color="{{ computed.loadingColor({ checked, activeColor, inactiveColor }) }}"
+      custom-class="wxc-switch__loading"
+    />
+  </view>
+</view>

@@ -1,0 +1,16 @@
+<view wx:if="{{show && notice}}" class="notice custom-class" style="background-color: {{backgroundColor}};" bind:tap="onClick">
+  <wxc-icon wx:if="{{showIcon}}" name="volume-o" class="notice-icon" size="19" color="{{iconColor}}"></wxc-icon>
+  <view class="notice-text-wrap" style="color: {{color}};">
+    <view wx:if="{{scroll}}" class="notice-text notice-text-animate">
+      <text class="notice-text-span">{{notice}}</text>
+      <text class="notice-text-span">{{notice}}</text>
+    </view>
+    <view wx:else class="notice-text">
+      <text class="notice-text-span">{{notice}}</text>
+    </view>
+  </view>
+  <block wx:if="{{close}}">
+    <view class="notice-text-overlay" style="background: linear-gradient(to right, {{bgRgba}}, {{backgroundColor}});"></view>
+    <wxc-icon class="notice-close" name="cross" size="20" color="#fff" catch:tap="onDismissNotice"></wxc-icon>
+  </block>
+</view>

@@ -1,0 +1,37 @@
+{
+  // 小程序版本号
+  "appVer": "1.0.0",
+  // 缺省的配置(别手动修改)
+  "config": "#mp-weixin-dev#",
+  "platform": {
+    // 微信小程序: 生产环境
+    "mp-weixin": {
+      "appId": "wx2938e11527fd6650",
+      // 配置文件(根据项目指定配置项)
+      "config": "mp-weixin.ts",
+      // 编译脚本配置
+      "compiler": {
+        "npm-loader": {
+          "global_ignore": ["tslib", "mobx"],
+          "npm_paths": {
+            "mobx": "lib/mobx.min.js"
+          }
+        }
+      }
+    },
+    // 微信小程序: 开发环境
+    "mp-weixin-dev": {
+      "appId": "wx2938e11527fd6650",
+      "config": "mp-weixin-dev.ts",
+      "compiler": {
+        "npm-loader": {
+          "global_ignore": ["tslib", "mobx"],
+          "npm_paths": {
+            "mobx": "lib/mobx.js"
+          },
+          "log": false
+        }
+      }
+    }
+  }
+}

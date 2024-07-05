@@ -1,0 +1,17 @@
+<view class="avatar custom-class" bind:tap="onClick">
+  <block wx:if="{{src}}">
+    <wxc-image 
+      custom-class="avatar-pic" 
+      custom-style="{{border}}" 
+      src="{{src}}" 
+      round="{{round}}" 
+      radius="{{radius}}"
+      border-color="{{borderColor}}"
+      border-size="{{borderSize}}" 
+      placeholder="/res/icon_default_ava.png"/>
+  </block>
+  <wxc-cc>
+    <slot></slot>
+  </wxc-cc>
+  <wxc-badge class="avatar-badge" wx:if="{{count}}" value="{{count}}"/>
+</view>

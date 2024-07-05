@@ -1,0 +1,12 @@
+<wxs src="../../../wxs/utils.wxs" module="utils"/>
+<view 
+  class="{{ classPrefix }} {{ isImageName ? 'wxc-icon--image' : classPrefix + '-' + name }} custom-class"
+  hover-class="hover-class"
+  style="{{color ? 'color: '+color+';': ''}} font-size: {{ utils.addUnit(size) }};{{ customStyle }}"
+  bind:tap="onClick">
+  <image
+    wx:if="{{ isImageName }}"
+    src="{{ name }}"
+    mode="aspectFit"
+    class="wxc-icon__image"/>
+</view>

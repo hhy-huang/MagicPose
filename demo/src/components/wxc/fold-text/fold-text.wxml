@@ -1,0 +1,5 @@
+
+<view class="custom-class fold-container">
+  <text>{{info}}</text>
+  <view wx:if="{{isNeedFold}}" class="custom-fold-class fold" bind:tap="onFold">{{isFold ? unfoldText : foldText}}</view>
+</view>

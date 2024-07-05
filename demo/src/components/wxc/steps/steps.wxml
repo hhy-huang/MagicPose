@@ -1,0 +1,15 @@
+<view class="navs">
+  <view wx:for="{{steps}}" wx:key="*this" class="item {{status(index, active)}}">{{item}}</view>
+</view>
+
+<wxs module="status">
+  function get(index, active) {
+    if (index <= active) {
+      return 'active';
+    } else {
+      return '';
+    }
+  }
+
+  module.exports = get;
+</wxs>
