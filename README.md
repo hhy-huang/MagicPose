@@ -6,7 +6,21 @@
 ------|-----|-----
 |2024.6.8| Create repository. | - |
 |2024.6.28| Init Wechat App code framework. | - |
+|2024.7.5| Init Flask framework for backend. Just random from static images. | - |
 
+# Implementation
+## Flask
+```
+cd ./Flask/src
+```
+
+Then start the server.
+
+```
+python app.py
+```
+
+The static resources are within `./Flask/static`.
 
 # WeChat APP
 
